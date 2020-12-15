@@ -1,0 +1,17 @@
+ul{
+    list-style-type: none;
+}
+li{
+    float: left;
+}
+
+li a{
+    display: block;
+    text-decoration: none;
+    margin: 10px;
+}
+div.a{
+    text-align: center;
+    margin: 20px auto;
+    width: 50%;
+}
