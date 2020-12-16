@@ -8,12 +8,11 @@ const geocode = (add, callback)=>{
     request({url: urlSearch, json: true}, (error, {body})=>{
         if(error){
             // console.log("check net")
-            callback("check net", undefined)
+            callback("Something went wrong", undefined)
         }
         else if(body.message == "Not Found"){
             // console.log("error")
-            console.log("inside")
-            callback("no location", undefined)
+            callback("Provide location", undefined)
         }
         else{
             const ll = body.features[0].center

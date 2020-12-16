@@ -19,6 +19,7 @@ weatherForm.addEventListener("submit", (e)=>{
     const location = search.value
 
     place.innerText = "Loading...."
+    temp.innerText = ""
 
     fetch("/weather?add="+ location).then((response)=>{
     response.json().then((data)=>{
@@ -28,7 +29,7 @@ weatherForm.addEventListener("submit", (e)=>{
         }
         else{
             place.innerText = data.location
-            temp.innerText = data.data.temp + "F"
+            temp.innerText = data.data.temp + "C"
         }
         })
     })

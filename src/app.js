@@ -55,7 +55,7 @@ app.get("/products", (req, res)=>{
 app.get("/weather", (req, res)=>{
     if(!req.query.add){
         return res.send({
-            error: "provide add"
+            error: "Please provide address!"
         })
     }
     
