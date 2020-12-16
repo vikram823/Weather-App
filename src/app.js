@@ -1,12 +1,13 @@
 const path = require('path')
 const express = require("express")
 const { read } = require('fs')
-const app = express()
 const hbs = require("hbs")
 const request = require("request")
 const geocode = require("./utils/geocode")
 const forecast = require("./utils/forecast")
 
+const app = express()
+const port = process.env.PORT || 3000
 
 const publicPath = path.join(__dirname, "../public")
 const viewPath = path.join(__dirname, "../templates/views")
@@ -85,6 +86,6 @@ app.get("*", (req, res)=>{
     res.render("404",{})
 })
 
-app.listen(3000, ()=>{
-    console.log('server is up on the port 3000')
+app.listen(port, ()=>{
+    console.log('server is up on the port '+ port)
 })
